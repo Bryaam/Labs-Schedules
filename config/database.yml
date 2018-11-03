@@ -78,8 +78,7 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
   <<: *default
-  database: labs_schedule_maker_production
-  username: labs_schedule_maker
+  database: <%= ENV['LABS_SCHEDULE_MAKER_DATABASE_NAME'] %>
+  username: <%= ENV['LABS_SCHEDULE_MAKER_DATABASE_USER'] %>
   password: <%= ENV['LABS_SCHEDULE_MAKER_DATABASE_PASSWORD'] %>
