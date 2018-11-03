@@ -1,0 +1,12 @@
+<div class="dropdown">
+  <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-ellipsis-v"></i>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+    <%= link_to 'Ver', reservation_request_path(reservation_request), class: 'dropdown-item' %>
+    <%= link_to 'Editar', edit_reservation_request_path(reservation_request), class: 'dropdown-item' if reservation_request.user == current_user %>
+    <%= link_to 'Eliminar', reservation_request_path(reservation_request), class: 'dropdown-item', method: :delete if reservation_request.user == current_user %>
+    <%= link_to 'Aprobar', approve_reservation_request_path(reservation_request), class: 'dropdown-item', method: "post" if current_user.admin? %>
+    <%= link_to 'Desaprobar', disapprove_reservation_request_path(reservation_request), class: 'dropdown-item', method: "post" if current_user.admin?  %>
+  </div>
+</div>

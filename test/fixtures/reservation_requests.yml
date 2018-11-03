@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  course: one
+  laboratory_classroom: one
+  status: 1
+  estimated_date: 2018-11-03
+  starting_time: 2018-11-03 04:45:45
+  ending_time: 2018-11-03 04:45:45
+  description: MyText
+  special_requirements: MyString
+  person_in_charge: MyString
+
+two:
+  user: two
+  course: two
+  laboratory_classroom: two
+  status: 1
+  estimated_date: 2018-11-03
+  starting_time: 2018-11-03 04:45:45
+  ending_time: 2018-11-03 04:45:45
+  description: MyText
+  special_requirements: MyString
+  person_in_charge: MyString

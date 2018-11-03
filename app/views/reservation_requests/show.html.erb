@@ -1,0 +1,99 @@
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8"></div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-12 mb-xl-0">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0"><%="Solicitud de reserva #{@reservation_request.id}"%></h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="heading-small text-muted mb-4">Datos</h6>
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <span class="form-control-label">Curso</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.course_name %></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <span class="form-control-label">Laboratorio</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.laboratory_classroom_name %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h6 class="heading-small text-muted mb-4">Detalles</h6>
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <span class="form-control-label">Hora de inicio</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.starting_time.strftime("%I:%M %p") %></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <span class="form-control-label">Hora final</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.ending_time.strftime("%I:%M %p") %></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <span class="form-control-label">Fecha de reserva</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.estimated_date %></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <span class="form-control-label">Persona a cargo</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.person_in_charge %></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <span class="form-control-label">Descripción</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.description %></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <span class="form-control-label">Requerimientos especiales</span>
+                  <span class="form-control form-control-alternative"><%= @reservation_request.special_requirements %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 text-right">
+            <% if current_user.admin? %>
+              <%= link_to approve_reservation_request_path(@reservation_request), method: "post" do %>
+                <button class="btn btn-icon btn-3 btn-success" type="button">
+                  <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+                  <span class="btn-inner--text">Aprobar</span>
+                </button>
+              <% end %>
+              <%= link_to disapprove_reservation_request_path(@reservation_request), method: "post" do %>
+                <button class="btn btn-icon btn-3 btn-warning" type="button">
+                  <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
+                  <span class="btn-inner--text">Rechazar</span>
+                </button>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

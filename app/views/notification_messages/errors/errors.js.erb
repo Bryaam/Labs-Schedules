@@ -1,0 +1,6 @@
+<% resource.errors.each do |attr, msg| %>
+  iziToast.error({
+    title: 'Al parecer ocurrió un error',
+    message: "<%= msg %>"
+  });
+<% end %>

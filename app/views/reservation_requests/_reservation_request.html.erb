@@ -1,0 +1,20 @@
+<tr>
+  <td>
+    <%= reservation_request.laboratory_classroom_name %>
+  </td>
+  <td>
+    <%= reservation_request.course_name %>
+  </td>
+  <td>
+    <%= reservation_request.estimated_date%>
+  </td>
+  <td>
+    <button type="button" class="btn btn-primary btn-sm"><%= reservation_request.status.humanize %></button>
+  </td>
+  <td>
+    <%= reservation_request.person_in_charge %>
+  </td>
+  <td class="text-right">
+    <%= render 'actions', reservation_request: reservation_request %>
+  </td>
+</tr>
