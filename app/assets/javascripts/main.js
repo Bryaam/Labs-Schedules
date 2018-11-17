@@ -19,4 +19,9 @@ $(document).on("turbolinks:load", function() {
       scrollbar: true
   });
 
+  $('#calendar').fullCalendar({
+    locale: 'es',
+    events: '/reservation_requests.json'
+  });
+
 });

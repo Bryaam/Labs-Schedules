@@ -7,6 +7,9 @@
 //= require bootstrap
 //= require argon/argon
 //= require iziToast
+//= require moment 
+//= require fullcalendar
+//= require fullcalendar/locale-all
 
 //= require jquery.slimscroll.min
 //= require jquery-ui/widgets/sortable

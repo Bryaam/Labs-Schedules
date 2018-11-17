@@ -2,6 +2,7 @@ class ReservationRequestsController < ApplicationController
   before_action :set_reservation_request, only: [:show, :edit, :update, :destroy, :approve, :disapprove]
 
   def index
+    @events = ReservationRequest.accepted
     if current_user.common?
       @reservation_requests = current_user.reservation_requests
     else

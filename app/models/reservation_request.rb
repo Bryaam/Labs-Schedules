@@ -14,4 +14,8 @@ class ReservationRequest < ApplicationRecord
 
   delegate :name, to: :laboratory_classroom, prefix: true
   delegate :name, to: :course, prefix: true
+
+  def event_title
+    "#{laboratory_classroom_name} | #{starting_time.strftime("%I:%M %p")} - #{ending_time.strftime("%I:%M %p")}"
+  end
 end
