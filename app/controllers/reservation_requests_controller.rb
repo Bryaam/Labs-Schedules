@@ -39,13 +39,17 @@ class ReservationRequestsController < ApplicationController
   end
 
   def approve
-    @reservation_request.update(status: 2)
+    @reservation_request.update(status: :accepted)
     redirect_to reservation_requests_path
   end
   
   def disapprove
-    @reservation_request.update(status: 1)
+    @reservation_request.update(status: :rejected)
     redirect_to reservation_requests_path
+  end
+
+  def map
+    
   end
 
   private

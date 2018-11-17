@@ -28,6 +28,18 @@
       </div>
       <!-- Navigation -->
       <ul class="navbar-nav">
+        <% if current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to users_path, class: 'nav-link' do %>
+              <i class="ni ni-circle-08 text-danger"></i> Usuarios
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to map_reservation_requests_path, class: 'nav-link' do %>
+              <i class="ni ni-album-2 text-warning"></i> Mapa de Reservas
+            <% end %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to new_reservation_request_path, class: 'nav-link' do %>
             <i class="ni ni-calendar-grid-58 text-success"></i> Nueva Reserva
