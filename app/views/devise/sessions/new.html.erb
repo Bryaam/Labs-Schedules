@@ -3,10 +3,18 @@
   <div class="row justify-content-center">
     <div class="col-lg-5 col-md-7">
       <div class="card bg-secondary shadow border-0">
-        <div class="card-header bg-transparent">
-          <div class="text-muted text-center mt-2 mb-3">Iniciar Sesión</div>
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3"><small>Inicie sesión con su cuenta PUCP</small></div>
+          <div class="btn-wrapper text-center">
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-neutral btn-icon' do %>
+              <%= image_tag 'pucp-logo.png', alt: 'Logo', class: 'w-100' %>
+            <% end %>
+          </div>
         </div>
         <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+            <small>O inicie sesión usando sus credenciales</small>
+          </div>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <% flash.each do |message_type, message| %>
               <div class="alert alert-danger alert-dismissible fade show" role="alert">

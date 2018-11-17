@@ -5,10 +5,18 @@
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8">
       <div class="card bg-secondary shadow border-0">
-        <div class="card-header bg-transparent">
-          <div class="text-muted text-center mt-2 mb-3">Registrarse</div>
-        </div>
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3"><small>Regístrese con su cuenta PUCP</small></div>
+          <div class="btn-wrapper text-center">
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-neutral btn-icon' do %>
+              <%= image_tag 'pucp-logo.png', alt: 'Logo', class: 'w-100' %>
+            <% end %>
+          </div>
+        </div>      
         <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+            <small>O complete el registro manualmente</small>
+          </div>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
             <div class="form-group">

@@ -59,6 +59,8 @@ gem 'font-awesome-sass', '~> 5.3.1'
 # Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
 gem "select2-rails"
 gem 'jquery-ui-rails'
+gem 'figaro'
+gem "omniauth-google-oauth2", "~> 0.2.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
